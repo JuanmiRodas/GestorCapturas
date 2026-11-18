@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Gestor de capturas</string>
+    <string name="summary">%1$d capturas · %2$s</string>
+    <string name="no_permission">Concede acceso a las fotos para ver y vigilar tus capturas.</string>
+    <string name="n_selected">%d seleccionadas</string>
+    <string name="allow_delete">Permitir borrar sin confirmación</string>
+    <string name="allow_delete_explanation">Ahora Android pide confirmación cada vez que borras una captura. Dale a la app acceso a todos los archivos para borrar al instante.</string>
+    <string name="select_all">Seleccionar todo</string>
+    <string name="older_than_days">Más de %d días</string>
+    <string name="larger_than_mb">Más de %d MB</string>
+    <string name="delete">Borrar</string>
+    <string name="delete_selected">Borrar %1$d (%2$s)</string>
+    <string name="confirm_delete">¿Borrar %d capturas?</string>
+    <string name="delete_all">Borrar todas (%d)</string>
+    <string name="delete_failed">No se pudo borrar la captura</string>
+    <string name="settings">Ajustes</string>
+    <string name="channel_screenshots">Capturas nuevas</string>
+    <string name="screenshot_title">Nueva captura</string>
+    <string name="action_delete">Borrar</string>
+    <string name="action_keep">Keep</string>
+
+    <string name="keep_dialog_title">Guardar en Google Keep</string>
+    <string name="keep_analyzing">Reconociendo la captura…</string>
+    <string name="keep_title_hint">Título</string>
+    <string name="keep_text_hint">Nota (texto reconocido)</string>
+    <string name="save_to_keep">Guardar en Keep</string>
+    <string name="keep_not_installed">Google Keep no está instalado</string>
+
+    <string name="pcloud_login_title">Conectar pCloud</string>
+    <string name="pcloud_login_explanation">Se guarda solo un token de acceso, nunca tu contraseña. Si entras en pCloud con Google o Apple, crea antes una contraseña en la web de pCloud.</string>
+    <string name="pcloud_email">Correo de pCloud</string>
+    <string name="pcloud_password">Contraseña</string>
+    <string name="pcloud_login">Conectar</string>
+    <string name="pcloud_login_ok">pCloud conectado</string>
+    <string name="pcloud_login_failed">No se pudo conectar: %s</string>
+    <string name="pcloud_code_title">Verificación en dos pasos</string>
+    <string name="pcloud_code_explanation">Tu cuenta de pCloud pide un código. Recíbelo en la app de pCloud de tu móvil o por SMS, o usa tu app de autenticación o un código de recuperación. Este dispositivo quedará como de confianza y no lo volverá a pedir.</string>
+    <string name="pcloud_code_send_app">Enviar código a la app de pCloud</string>
+    <string name="pcloud_code_send_sms">Enviar código por SMS</string>
+    <string name="pcloud_code_hint">Código</string>
+    <string name="pcloud_code_verify">Verificar</string>
+    <string name="pcloud_code_sent_app">Código enviado: mira la notificación de la app de pCloud</string>
+    <string name="pcloud_code_sent_sms">Código enviado por SMS</string>
+    <string name="pcloud_code_send_failed">No se pudo enviar el código: %s</string>
+    <string name="pcloud_web_title">Iniciar sesión en pCloud</string>
+    <string name="pref_pcloud_connected_no_email">Conectada</string>
+    <string name="pcloud_email_code_title">Verifica el inicio de sesión</string>
+    <string name="pcloud_email_code_explanation">pCloud te ha enviado un código de verificación a %s. Escríbelo aquí.</string>
+    <string name="pcloud_email_code_resend">Reenviar código</string>
+    <string name="pcloud_email_code_resent">Código reenviado a tu correo</string>
+    <string name="pcloud_logout">Desconectar</string>
+    <string name="pcloud_logout_confirm">¿Desconectar pCloud? Las capturas borradas dejarán de borrarse también de la nube.</string>
+
+    <string name="battery_explanation">Android cierra la app al cabo de unas horas para ahorrar batería y dejan de llegar los avisos. Permite que funcione en segundo plano para evitarlo.</string>
+    <string name="battery_allow">Permitir en segundo plano</string>
+    <string name="pref_battery">Funcionamiento en segundo plano</string>
+    <string name="pref_battery_on">Sin restricciones de batería</string>
+    <string name="pref_battery_off">Restringido: Android puede cerrar la app y dejar de avisar. Toca para permitirlo</string>
+
+    <string name="photo_access_partial">Solo has dado acceso a algunas fotos, así que la app no ve las capturas nuevas: no aparecen aquí, no avisa y no las borra de pCloud.</string>
+    <string name="photo_access_none">La app no tiene acceso a tus fotos, así que no puede ver ni avisar de tus capturas.</string>
+    <string name="photo_access_allow">Permitir todas las fotos</string>
+    <string name="pcloud_expired_title">pCloud se ha desconectado</string>
+    <string name="pcloud_expired_text">La sesión de pCloud ha caducado. Vuelve a iniciar sesión en Ajustes; las capturas pendientes se borrarán de pCloud entonces.</string>
+    <string name="pref_pcloud_expired">Sesión caducada. Toca para volver a iniciar sesión</string>
+    <string name="diagnostics_title">Diagnóstico y registro</string>
+    <string name="pref_diagnostics_summary">Estado de la app y registro de lo que ha hecho, para compartirlo si algo falla</string>
+    <string name="diagnostics_share">Compartir</string>
+    <string name="diagnostics_clear">Borrar registro</string>
+    <string name="diagnostics_loading">Preparando el informe…</string>
+
+    <string name="pref_category_notifications">Notificaciones</string>
+    <string name="pref_notify">Avisar al hacer una captura</string>
+    <string name="pref_notify_summary">Muestra una notificación con vista previa y los botones Borrar y Keep</string>
+    <string name="pref_delete_all">Mostrar «Borrar todas»</string>
+    <string name="pref_delete_all_summary">Cuando hay 2 o más capturas pendientes</string>
+    <string name="pref_system_notifications">Ajustes de notificaciones de Android</string>
+    <string name="pref_system_notifications_summary">Sonido, vibración y estilo de los avisos</string>
+    <string name="pref_category_delete">Borrado</string>
+    <string name="pref_all_files_on">Activado: se borra al instante</string>
+    <string name="pref_all_files_off">Desactivado: Android pedirá confirmación al borrar</string>
+    <string name="pref_confirm">Confirmar al borrar desde la app</string>
+    <string name="pref_confirm_summary">Pregunta antes de borrar varias capturas seleccionadas</string>
+    <string name="pref_category_pcloud">pCloud</string>
+    <string name="pref_pcloud_account">Cuenta de pCloud</string>
+    <string name="pref_pcloud_connected">Conectada: %s</string>
+    <string name="pref_pcloud_disconnected">Sin conectar. Toca para iniciar sesión</string>
+    <string name="pref_pcloud_delete">Borrar también de pCloud</string>
+    <string name="pref_pcloud_delete_summary">Al borrar una captura se busca su copia subida y se manda a la papelera de pCloud</string>
+    <string name="pref_category_cleanup">Limpieza</string>
+    <string name="pref_old_days">Antigüedad para «Más de N días»</string>
+    <string name="pref_large_mb">Tamaño para «Más de N MB»</string>
+</resources>

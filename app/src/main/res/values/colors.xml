@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Material 3 error colours, used for the delete buttons inside notifications. -->
+    <color name="delete_button">#B3261E</color>
+    <color name="delete_button_text">#FFFFFF</color>
+    <!-- Material 3 secondary container, for the Keep button. -->
+    <color name="keep_button">#E8DEF8</color>
+    <color name="keep_button_text">#1D192B</color>
+    <color name="thumb_placeholder">#33888888</color>
+    <color name="launcher_background">#1A73E8</color>
+</resources>

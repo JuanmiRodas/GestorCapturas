@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Material 3 with the wallpaper-based colours of Android 12+. -->
+    <style name="Theme.ScreenshotManager" parent="Theme.Material3.DynamicColors.DayNight.NoActionBar" />
+
+    <!-- For activities that only show a dialog over whatever is on screen. -->
+    <style name="Theme.ScreenshotManager.Transparent">
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:backgroundDimEnabled">false</item>
+    </style>
+
+    <style name="ShapeAppearance.ScreenshotManager.Thumbnail" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">12dp</item>
+    </style>
+</resources>

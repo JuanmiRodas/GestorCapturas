@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="old_days_entries">
+        <item>7 días</item>
+        <item>30 días</item>
+        <item>90 días</item>
+        <item>1 año</item>
+    </string-array>
+    <string-array name="old_days_values">
+        <item>7</item>
+        <item>30</item>
+        <item>90</item>
+        <item>365</item>
+    </string-array>
+    <string-array name="large_mb_entries">
+        <item>1 MB</item>
+        <item>2 MB</item>
+        <item>5 MB</item>
+        <item>10 MB</item>
+    </string-array>
+    <string-array name="large_mb_values">
+        <item>1</item>
+        <item>2</item>
+        <item>5</item>
+        <item>10</item>
+    </string-array>
+    <string-array name="pcloud_login_methods">
+        <item>En la web de pCloud (recomendado)</item>
+        <item>Con correo y contraseña</item>
+    </string-array>
+</resources>

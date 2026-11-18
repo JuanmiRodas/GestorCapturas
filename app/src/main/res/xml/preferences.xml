@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <PreferenceCategory app:title="@string/pref_category_notifications" app:iconSpaceReserved="false">
+
+        <SwitchPreferenceCompat
+            app:defaultValue="true"
+            app:iconSpaceReserved="false"
+            app:key="notify_enabled"
+            app:summary="@string/pref_notify_summary"
+            app:title="@string/pref_notify" />
+
+        <SwitchPreferenceCompat
+            app:defaultValue="true"
+            app:dependency="notify_enabled"
+            app:iconSpaceReserved="false"
+            app:key="show_delete_all"
+            app:summary="@string/pref_delete_all_summary"
+            app:title="@string/pref_delete_all" />
+
+        <Preference
+            app:iconSpaceReserved="false"
+            app:key="battery"
+            app:title="@string/pref_battery" />
+
+        <Preference
+            app:iconSpaceReserved="false"
+            app:key="diagnostics"
+            app:summary="@string/pref_diagnostics_summary"
+            app:title="@string/diagnostics_title" />
+
+        <Preference
+            app:iconSpaceReserved="false"
+            app:key="system_notifications"
+            app:summary="@string/pref_system_notifications_summary"
+            app:title="@string/pref_system_notifications" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory app:title="@string/pref_category_delete" app:iconSpaceReserved="false">
+
+        <Preference
+            app:iconSpaceReserved="false"
+            app:key="all_files"
+            app:title="@string/allow_delete" />
+
+        <SwitchPreferenceCompat
+            app:defaultValue="true"
+            app:iconSpaceReserved="false"
+            app:key="confirm_in_app"
+            app:summary="@string/pref_confirm_summary"
+            app:title="@string/pref_confirm" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory app:title="@string/pref_category_pcloud" app:iconSpaceReserved="false">
+
+        <Preference
+            app:iconSpaceReserved="false"
+            app:key="pcloud_account"
+            app:title="@string/pref_pcloud_account" />
+
+        <SwitchPreferenceCompat
+            app:defaultValue="true"
+            app:iconSpaceReserved="false"
+            app:key="pcloud_delete"
+            app:summary="@string/pref_pcloud_delete_summary"
+            app:title="@string/pref_pcloud_delete" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory app:title="@string/pref_category_cleanup" app:iconSpaceReserved="false">
+
+        <ListPreference
+            app:defaultValue="30"
+            app:entries="@array/old_days_entries"
+            app:entryValues="@array/old_days_values"
+            app:iconSpaceReserved="false"
+            app:key="old_days"
+            app:title="@string/pref_old_days"
+            app:useSimpleSummaryProvider="true" />
+
+        <ListPreference
+            app:defaultValue="2"
+            app:entries="@array/large_mb_entries"
+            app:entryValues="@array/large_mb_values"
+            app:iconSpaceReserved="false"
+            app:key="large_mb"
+            app:title="@string/pref_large_mb"
+            app:useSimpleSummaryProvider="true" />
+
+    </PreferenceCategory>
+
+</PreferenceScreen>
