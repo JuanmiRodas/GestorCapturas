@@ -16,12 +16,12 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - uses: actions/setup-java@v4
+      - uses: actions/setup-java@v5
         with:
           distribution: temurin
           java-version: "17"
 
-      - uses: android-actions/setup-android@v3
+      # GitHub's Ubuntu runners already include the Android SDK (ANDROID_HOME).
 
       # Every version must be signed with the same key, or Android refuses to update the installed app.
       - name: Restore signing key
