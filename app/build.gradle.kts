@@ -11,12 +11,29 @@ android {
         applicationId = "com.example.screenshotmanager"
         minSdk = 30
         targetSdk = 35
-        versionCode = 14
-        versionName = "2.3"
+        versionCode = 15
+        versionName = "2.4"
 
         // ML Kit bundles native code; only 64-bit ARM phones are targeted, which keeps the APK small.
         ndk {
             abiFilters += "arm64-v8a"
+        }
+    }
+
+    // All builds, local and on GitHub, must be signed with the same key or Android refuses to update
+    // the installed app. CI points SIGNING_KEYSTORE at the key restored from the repository secret.
+    signingConfigs {
+        create("shared") {
+            storeFile = file(System.getenv("SIGNING_KEYSTORE") ?: "${System.getProperty("user.home")}/.android/debug.keystore")
+            storePassword = "android"
+            keyAlias = "androiddebugkey"
+            keyPassword = "android"
+        }
+    }
+
+    buildTypes {
+        getByName("debug") {
+            signingConfig = signingConfigs.getByName("shared")
         }
     }
 
