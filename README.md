@@ -26,7 +26,4 @@ En la app: **Ajustes → Diagnóstico y registro → Compartir**. El informe inc
 
 ## Publicar una versión nueva
 
-1. Sube `versionCode` y `versionName` en `app/build.gradle.kts`.
-2. Crea y sube una etiqueta con ese número, por ejemplo `git tag v2.4 && git push origin v2.4`.
-
-GitHub Actions compila el APK, lo firma con la clave guardada en el secreto `SIGNING_KEYSTORE_BASE64` y lo publica en *Releases*.
+Sube `versionCode` y `versionName` en `app/build.gradle.kts` y haz *push* a `main`. GitHub Actions compila el APK, lo firma con la clave guardada en el secreto `SIGNING_KEYSTORE_BASE64` y, si ese `versionName` aún no está publicado, crea la *release* `v<versionName>` con el APK.
