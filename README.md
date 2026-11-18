@@ -12,13 +12,10 @@ Requiere Android 11 o superior (64 bits).
 
 ## Instalar y actualizar
 
-La forma más cómoda es con [Obtainium](https://github.com/ImranR98/Obtainium), que instala la app desde este repositorio y avisa de cada versión nueva:
+1. Descarga `GestorCapturas.apk` de la última versión en **Releases** e instálalo.
+2. Listo: la app comprueba sola si hay versión nueva al abrirla y ofrece **Actualizar** dentro de la propia app. También puedes buscarla en **Ajustes → Buscar actualizaciones**.
 
-1. Instala Obtainium (descárgalo de su página de *Releases*).
-2. En Obtainium pulsa **Añadir app** y pega la dirección de este repositorio.
-3. Pulsa **Instalar**. A partir de ahí, Obtainium te avisará de las actualizaciones.
-
-También puedes descargar `GestorCapturas.apk` directamente de la sección **Releases** e instalarlo encima de la versión anterior.
+La primera actualización pedirá permitir que la app instale apps de esta fuente (una sola vez).
 
 ## Si algo falla
 

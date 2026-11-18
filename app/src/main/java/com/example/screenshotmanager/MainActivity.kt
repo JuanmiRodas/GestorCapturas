@@ -37,6 +37,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var adapter: ScreenshotAdapter
     private val background = Executors.newSingleThreadExecutor()
 
+    private val updates = UpdatePrompt(this)
     private lateinit var photoAccessCard: View
     private lateinit var photoAccessText: TextView
     private var askedForPhotos = false
@@ -124,6 +125,7 @@ class MainActivity : AppCompatActivity() {
             askedForPhotos = true
             requestPermissions.launch(requiredPermissions())
         }
+        if (savedInstanceState == null) updates.check(manual = false)
     }
 
     override fun onResume() {
@@ -133,6 +135,7 @@ class MainActivity : AppCompatActivity() {
         olderChip.text = getString(R.string.older_than_days, Prefs.oldDays(this))
         largeChip.text = getString(R.string.larger_than_mb, Prefs.largeMb(this))
         updatePhotoAccessCard()
+        updates.onResume()
         if (ScreenshotStore.hasAccess(this)) {
             // Re-register on every visit, in case the system dropped the job (e.g. unused-app hibernation).
             startWatcherIfEnabled()

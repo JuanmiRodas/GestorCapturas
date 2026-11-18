@@ -25,6 +25,11 @@
 
         <Preference
             app:iconSpaceReserved="false"
+            app:key="updates"
+            app:title="@string/pref_updates" />
+
+        <Preference
+            app:iconSpaceReserved="false"
             app:key="diagnostics"
             app:summary="@string/pref_diagnostics_summary"
             app:title="@string/diagnostics_title" />

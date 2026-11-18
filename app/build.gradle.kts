@@ -11,8 +11,8 @@ android {
         applicationId = "com.example.screenshotmanager"
         minSdk = 30
         targetSdk = 35
-        versionCode = 15
-        versionName = "2.4"
+        versionCode = 16
+        versionName = "2.5"
 
         // ML Kit bundles native code; only 64-bit ARM phones are targeted, which keeps the APK small.
         ndk {

@@ -18,6 +18,13 @@ import kotlin.concurrent.thread
 
 class SettingsActivity : AppCompatActivity() {
 
+    val updates = UpdatePrompt(this)
+
+    override fun onResume() {
+        super.onResume()
+        updates.onResume()
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         enableEdgeToEdge()
         super.onCreate(savedInstanceState)
@@ -61,6 +68,11 @@ class SettingsActivity : AppCompatActivity() {
             }
             preference(Prefs.KEY_BATTERY).setOnPreferenceClickListener {
                 Battery.openSettings(requireActivity())
+                true
+            }
+            preference(Prefs.KEY_UPDATES).summary = getString(R.string.pref_updates_summary, Updater.currentVersion(context))
+            preference(Prefs.KEY_UPDATES).setOnPreferenceClickListener {
+                (requireActivity() as SettingsActivity).updates.check(manual = true)
                 true
             }
             preference(Prefs.KEY_DIAGNOSTICS).setOnPreferenceClickListener {

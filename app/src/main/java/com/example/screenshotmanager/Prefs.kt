@@ -18,6 +18,7 @@ object Prefs {
     const val KEY_PCLOUD_DELETE = "pcloud_delete"
     const val KEY_BATTERY = "battery"
     const val KEY_DIAGNOSTICS = "diagnostics"
+    const val KEY_UPDATES = "updates"
 
     fun notificationsEnabled(context: Context) = of(context).getBoolean(KEY_NOTIFY, true)
 
