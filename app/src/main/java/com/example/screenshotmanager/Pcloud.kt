@@ -237,7 +237,10 @@ object Pcloud {
             val result = call(host, "deletefile", auth + ("fileid" to file.getLong("fileid").toString()))
             when (val code = result.optInt("result")) {
                 0 -> {
-                    prefs.edit().putLong("folder", file.getLong("parentfolderid")).apply()
+                    prefs.edit()
+                        .putLong("folder", file.getLong("parentfolderid"))
+                        .putString("trashed:$name", "${file.getLong("fileid")}:${file.getLong("parentfolderid")}")
+                        .apply()
                     Outcome.DELETED
                 }
                 ERROR_FILE_NOT_FOUND -> Outcome.NOT_FOUND
@@ -261,6 +264,21 @@ object Pcloud {
         } catch (e: Exception) {
             AppLog.e("pCloud delete $name", e)
             Outcome.FAILED
+        }
+    }
+
+    /** Takes the copy of [name] out of pCloud's trash, if this app put it there. Blocking. */
+    fun restoreByName(context: Context, name: String) {
+        val prefs = prefs(context)
+        val (fileId, folderId) = prefs.getString("trashed:$name", null)?.split(':') ?: return
+        val auth = prefs.getString("auth", null) ?: return
+        val host = prefs.getString("host", null) ?: return
+        try {
+            val json = call(host, "trash_restore", mapOf("auth" to auth, "fileid" to fileId, "restoreto" to folderId))
+            AppLog.i("pCloud restore $name: ${if (json.optInt("result") == 0) "OK" else errorOf(json)}")
+            prefs.edit().remove("trashed:$name").apply()
+        } catch (e: IOException) {
+            AppLog.e("pCloud restore $name", e)
         }
     }
 

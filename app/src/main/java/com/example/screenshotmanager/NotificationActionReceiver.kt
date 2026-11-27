@@ -27,7 +27,7 @@ class NotificationActionReceiver : BroadcastReceiver() {
 
         val pending = goAsync()
         thread {
-            val deleted = ScreenshotDeleter.delete(context, uris)
+            val deleted = ScreenshotDeleter.moveToTrash(context, uris)
             ScreenshotNotifier.handled(context, uris)
             if (deleted < uris.size) {
                 Handler(Looper.getMainLooper()).post {

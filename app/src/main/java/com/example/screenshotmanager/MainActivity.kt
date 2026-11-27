@@ -58,7 +58,7 @@ class MainActivity : AppCompatActivity() {
 
     private val confirmDelete =
         registerForActivityResult(ActivityResultContracts.StartIntentSenderForResult()) { result ->
-            if (result.resultCode == RESULT_OK) ScreenshotDeleter.deletedBySystem(this, namesAwaitingSystemDelete)
+            if (result.resultCode == RESULT_OK) ScreenshotDeleter.trashedBySystem(this, namesAwaitingSystemDelete)
             reload()
         }
 
@@ -87,8 +87,9 @@ class MainActivity : AppCompatActivity() {
         }
         DragSelectHelper(grid, adapter)
 
-        toolbar.setOnMenuItemClickListener {
-            startActivity(Intent(this, SettingsActivity::class.java))
+        toolbar.setOnMenuItemClickListener { item ->
+            val screen = if (item.itemId == R.id.trash) TrashActivity::class.java else SettingsActivity::class.java
+            startActivity(Intent(this, screen))
             true
         }
         toolbar.setNavigationOnClickListener { adapter.clearSelection() }
@@ -197,13 +198,13 @@ class MainActivity : AppCompatActivity() {
         if (!ScreenshotDeleter.canDeleteSilently()) {
             // A single system dialog confirms the whole batch.
             namesAwaitingSystemDelete = screenshots.map { it.name }
-            val request = MediaStore.createDeleteRequest(contentResolver, screenshots.map { it.uri })
+            val request = MediaStore.createTrashRequest(contentResolver, screenshots.map { it.uri }, true)
             confirmDelete.launch(IntentSenderRequest.Builder(request).build())
             return
         }
         val deleteNow = {
             background.execute {
-                ScreenshotDeleter.delete(this, screenshots.map { it.uri })
+                ScreenshotDeleter.moveToTrash(this, screenshots.map { it.uri })
                 reload()
             }
         }

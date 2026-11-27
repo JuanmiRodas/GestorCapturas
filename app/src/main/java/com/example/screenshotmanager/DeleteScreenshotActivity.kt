@@ -10,8 +10,8 @@ import androidx.core.content.IntentCompat
 
 /**
  * Transparent trampoline used by "Borrar" while the app lacks all-files access. Android then
- * requires the user to confirm deleting media the app did not create, so the system dialog is
- * shown here and the notifications are only removed if the user confirms.
+ * requires the user to confirm moving media the app did not create to the trash, so the system
+ * dialog is shown here and the notifications are only removed if the user confirms.
  */
 class DeleteScreenshotActivity : ComponentActivity() {
 
@@ -22,7 +22,7 @@ class DeleteScreenshotActivity : ComponentActivity() {
         registerForActivityResult(ActivityResultContracts.StartIntentSenderForResult()) { result ->
             if (result.resultCode == RESULT_OK) {
                 ScreenshotNotifier.handled(this, uris)
-                ScreenshotDeleter.deletedBySystem(this, names)
+                ScreenshotDeleter.trashedBySystem(this, names)
             }
             finish()
         }
@@ -41,7 +41,7 @@ class DeleteScreenshotActivity : ComponentActivity() {
         if (savedInstanceState == null) {
             // Names must be read before the files are gone.
             names = ScreenshotDeleter.namesOf(this, uris)
-            val request = MediaStore.createDeleteRequest(contentResolver, uris)
+            val request = MediaStore.createTrashRequest(contentResolver, uris, true)
             confirmDelete.launch(IntentSenderRequest.Builder(request).build())
         }
     }

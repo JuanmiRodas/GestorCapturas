@@ -44,6 +44,11 @@ class PcloudDeleteWorker(context: Context, params: WorkerParameters) : Worker(co
         private val WAIT_FOR_UPLOAD_MS = TimeUnit.MINUTES.toMillis(15)
         private const val MAX_ATTEMPTS = 10
 
+        /** Stops a pending deletion, e.g. because the screenshot was restored from the trash. */
+        fun cancel(context: Context, name: String) {
+            WorkManager.getInstance(context).cancelUniqueWork("pcloud-delete-$name")
+        }
+
         fun enqueue(context: Context, names: List<String>) {
             if (names.isEmpty() || !Pcloud.isConnected(context) || !Prefs.deleteFromPcloud(context)) return
             if (Pcloud.isExpired(context)) {

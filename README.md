@@ -3,7 +3,7 @@
 App de Android para gestionar capturas de pantalla:
 
 - Al hacer una captura aparece una notificación con la vista previa y los botones **Borrar** y **Keep**.
-- **Borrar** la elimina del móvil y también su copia subida a **pCloud**.
+- **Borrar** la mueve a la **papelera** (30 días, con opción de restaurar) y manda su copia subida a la papelera de **pCloud**.
 - **Keep** propone una nota para Google Keep con el texto reconocido en la captura.
 - **Borrar todas** aparece cuando hay varias capturas pendientes.
 - La app muestra todas las capturas, con selección arrastrando y filtros para limpiar (antiguas, grandes…).

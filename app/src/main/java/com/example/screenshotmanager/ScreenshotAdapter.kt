@@ -53,6 +53,11 @@ class ScreenshotAdapter(
         selectionChanged()
     }
 
+    fun toggleSelection(screenshot: Screenshot) {
+        if (!selectedIds.remove(screenshot.id)) selectedIds += screenshot.id
+        selectionChanged()
+    }
+
     fun clearSelection() {
         selectedIds.clear()
         selectionChanged()
